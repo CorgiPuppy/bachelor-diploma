@@ -36,8 +36,8 @@
 - $#ptgk("d")_text("х") = 9 text("мм") = 0.009 text(" м")$
 - $text("Труба_х - сталь 15ХМ")$
 - $text("Труба_г - Ст20")$
-- $Q_text("г") = 50000 text(" ")frac(text("н.м")^3, text("ч"))$
-- $Q_text("х") = 50000 text(" ")frac(text("н.м")^3, text("ч"))$
+- $Q_text("г") = 50000 text(" ")frac(text("н.м")^3, text("ч")) = 13.9 text(" ")frac(text("н.м")^3, text("с"))$
+- $Q_text("х") = 50000 text(" ")frac(text("н.м")^3, text("ч")) = 13.9 text(" ")frac(text("н.м")^3, text("с"))$
 
 #align(center, block[
     = Введение
@@ -52,6 +52,29 @@
 #align(center, block[
     = Литературный обзор 
 ])
+
+#align(center, block[
+	= Расчётная часть
+])
+Молярная масса метана $M = 16.044 text(" ")frac(text("г"), text("моль")) = 16.044 * 10^(-3) text(" ")frac(text("кг"), text("моль"))$ \
+Уравнение состояния идеального газа:
+$ p V = #ptgk("n")R T, $
+где $#ptgk("n") = frac(m, M)$, $V = frac(m, #ptgk("r"))$.
+Тогда #ptgk("r") можно найти как
+$ #ptgk("r") = frac(p M, R T) $
+Плотности горячего и холодного газов соответственно:
+$ #ptgk("r")_text("г") = frac(p M, R T_text("г")) = frac(0.85 * 10^6 * 16.044 * 10^(-3), 8.314 * 773.15) = 2.12 text(" ")frac(text("кг"), text("м")^3) $
+$ #ptgk("r")_text("х") = frac(p M, R T_text("х")) = frac(0.85 * 10^6 * 16.044 * 10^(-3), 8.314 * 233.15) = 7.04 text(" ")frac(text("кг"), text("м")^3) $
+
+$ frac(p V, T) = frac(p_0 V_0, T_0) $ 
+Из данного соотношения можно выразить расходы горячего и холодного
+газов соответственно:
+$ Q_text("г") = Q_text("г, норм.") * frac(p_0, p) * frac(T_text("г"), T_0) = 13.9 * frac(0.1013, 0.85) * frac(773.15, 273.15) = 4.69 text(" ")frac(text("м")^3, text("с")) $
+$ Q_text("х") = Q_text("х, норм.") * frac(p_0, p) * frac(T_text("х"), T_0) = 13.9 * frac(0.1013, 0.85) * frac(233.15, 273.15) = 1.41 text(" ")frac(text("м")^3, text("с")) $
+
+Скорость потока для горячего и холодного газов соответственно:
+$ #ptgk("w")_text("г") = frac(Q_text("г"), S) = frac(4 Q_text("г"), #ptgk("p") d_text("вн. г")^2) = frac(4 * 4.69, 3.14 * 0.044^2) = 3086 text(" ")frac(text("м"), text("с")) $
+$ #ptgk("w")_text("х") = frac(Q_text("х"), S) = frac(4 Q_text("х"), #ptgk("p") d_text("вн. х")^2) = frac(4 * 1.41, 3.14 * 0.044^2) = 927 text(" ")frac(text("м"), text("с")) $
 
 @lesson
 2 @harry
